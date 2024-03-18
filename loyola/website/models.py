@@ -17,6 +17,9 @@ class Course(models.Model):
     # symmetrical = False, blank=True, null=True
     this_modules = models.ManyToManyField("Module", null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.title}"
+
 class Module(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -31,6 +34,9 @@ class Module(models.Model):
     files = models.FileField(null=True, blank=True)
     this_labs = models.ManyToManyField("Lab", null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.title}"
+
 class Lab(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -41,6 +47,9 @@ class Lab(models.Model):
     due_date = models.DateField(null=True, blank=True)
     is_completed = models.BooleanField(null=True, blank=True)
     files = models.FileField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.title}"
 
 class Submission(models.Model):
     # student = models.ForeignKey(Student)
@@ -60,3 +69,6 @@ class Assignment(models.Model):
     is_published = models.BooleanField(null=True, blank=True)
     files = models.FileField(null=True, blank=True)
     this_submissions = models.ManyToManyField(Submission, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.title}"

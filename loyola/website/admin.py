@@ -13,7 +13,7 @@ class LabAdmin(admin.ModelAdmin):
     list_display = ("title", "description")
 
 class SubmissionAdmin(admin.ModelAdmin):
-    list_display = ("score", "submission_date")
+    list_display = ("feedback", "score")
 
 class AssignmentAdmin(admin.ModelAdmin):
     list_display = ("title", "this_course", "description")
