@@ -1,6 +1,11 @@
+{% load static %}
 <!-- module_detail.html -->
 <!DOCTYPE html>
 <html lang="en">
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static '/Users/sophiahoman/Desktop/AIWebsite/my_site/static/css/style.css' %}">
+</head>
+    
 <head>
     <meta charset="UTF-8">
     <title>{{ module.title }}</title>
@@ -17,5 +22,23 @@
     <p>Files: {{ lab.files }}</p>
     <p>Notes: {{ lab.notes }}</p>
     <!-- Display other fields as needed -->
+    <div class="portfolio_card">
+        <div class="card-title">
+            <h4>Workshop 1: Introduction and Fundamentals</h4>
+        </div>
+        <div class="card-body">
+            <p>
+                <b style="color: #512184; font-weight: bold;">Wednesday, May 1:</b> This workshop introduces participants to the key concepts of AI, cybersecurity, and
+                privacy while highlighting their importance and creating awareness of potential risks
+                and ethical considerations. It is crucial to provide a high-level overview and generate
+                curiosity for further exploration in subsequent workshops. The panel will discuss
+                examples of how different industries use AI and the potential biases and risks
+                associated with it.
+                <br>
+                <br>
+            </p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
