@@ -3,8 +3,16 @@
 <body>
 
     <h1>Welcome to SecureAI!</h1>
+
+    {% comment %}
+        Link to the module of current workshop by using the 'order' of the module to which this workshop belongs
+    {% endcomment %}
     <a href="http://127.0.0.1:8000/module/{{workshop.this_module.order}}/">Return to module</a>
     
+    {% comment %}
+        Access workshop's fields within database using the context dict
+    {% endcomment %}
+
     <h2>Workshop</h2>
     <p>
       Title: {{ workshop.title }}<br/>
@@ -17,9 +25,10 @@
       <hr/>
     </p>
 
+    {% comment %}
+        Lab is defined within context dict in workshop_detail_view
+    {% endcomment %}
     <h2>Labs</h2>
-
-
     <p>
         <h3>{{ workshop.this_lab }}</h3>
         Description: {{ lab.description }}<br/>

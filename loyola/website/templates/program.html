@@ -6,16 +6,28 @@
 
     <h2>Program</h2>
     <p>
-      Title: {{ program.title }}<br/>
-      Description: {{ program.description }}<br/>
-      <hr/>
+        {% comment %}
+            Access program's fields within database using the context dict
+        {% endcomment %}
+        
+        Title: {{ program.title }}<br/>
+        Description: {{ program.description }}<br/>
+        <hr/>
     </p>
 
     <h2>Modules</h2>
 
+    {% comment %}
+        Django's template's 'for each' syntax used below 
+        Accessing program's modules, using field 'this_modules'
+    {% endcomment %}
+
     {% for module in program.this_modules.all %}
 
     <p>
+        {% comment %}
+            Link to the module, while also showing it's title
+        {% endcomment %}
         <h3><a href="http://127.0.0.1:8000/module/{{module.order}}/"> {{ module.title }}</a></h3>
         Description: {{ module.description }}<br/>
         <hr/>
