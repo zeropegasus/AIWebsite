@@ -1,16 +1,14 @@
 from django.http import HttpResponse
 from django.template import loader
-from .models import Course, Module, Lab, Submission, Assignment
+from .models import Program, Module, Workshop, Lab, Assignment, Submission, Instructor, Student
 
 def education(request):
-    myCourses = Course.objects.all().values()
     myModules = Module.objects.all().values()
     myLabs = Lab.objects.all().values()
     mySubmissions = Submission.objects.all().values()
     myAssignments = Assignment.objects.all().values()
 
     context = {
-        'myCourses': myCourses,
         'myModules': myModules,
         'myLabs': myLabs,
         'mySubmissions': mySubmissions,
