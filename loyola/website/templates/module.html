@@ -3,6 +3,9 @@
 <body>
 
     <h1>Welcome to SecureAI!</h1>
+    {% comment %}
+        Link to the program of current module by using the 'id' of the program to which this module belongs
+    {% endcomment %}
     <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}/">Return to program</a>
     
     <h2>Module</h2>
@@ -17,6 +20,9 @@
     {% for workshop in module.this_workshops.all %}
 
     <p>
+        {% comment %}
+            Link to the workshop, while also showing it's title
+        {% endcomment %}
         <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/"> {{ workshop.title }}</a></h3>
         Description: {{ workshop.description }}<br/>
         <hr/>
