@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Welcome to SecureAI!</h1>
+
+    <h2>Program</h2>
+    <p>
+      Title: {{ program.title }}<br/>
+      Description: {{ program.description }}<br/>
+      <hr/>
+    </p>
+
+    <h2>Modules</h2>
+
+    {% for module in program.this_modules.all %}
+
+    <p>
+        <h3><a href="http://127.0.0.1:8000/module/{{module.order}}/"> {{ module.title }}</a></h3>
+        Description: {{ module.description }}<br/>
+        <hr/>
+        {% endfor %}
+    </p>
+
+
+</body>
+</html>
