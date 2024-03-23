@@ -4,12 +4,13 @@
 
     <h1>Hello World!</h1>
 
-    <h2>Courses</h2>
-    {% for course in myCourses %}
+    <h2>Programs</h2>
+    {% for program in myPrograms %}
     <p>
-      Title: {{ course.title }}<br/>
-      Description: {{ course.description }}<br/>
-      Category: {{ course.category }}<br/>
+      Title: {{ program.title }}<br/>
+      Description: {{ program.description }}<br/>
+      Category: {{ program.category }}<br/>
+      ID: {{ program.id }}<br/>
       <hr/>
       {% endfor %}
     </p>

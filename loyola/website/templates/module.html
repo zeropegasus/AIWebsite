@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Welcome to SecureAI!</h1>
+    <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}/">Return to program</a>
+    
+    <h2>Module</h2>
+    <p>
+      Title: {{ module.title }}<br/>
+      Description: {{ module.description }}<br/>
+      <hr/>
+    </p>
+
+    <h2>Workshops</h2>
+
+    {% for workshop in module.this_workshops.all %}
+
+    <p>
+        <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/"> {{ workshop.title }}</a></h3>
+        Description: {{ workshop.description }}<br/>
+        <hr/>
+        {% endfor %}
+    </p>
+
+
+</body>
+</html>

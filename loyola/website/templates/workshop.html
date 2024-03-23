@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Welcome to SecureAI!</h1>
+    <a href="http://127.0.0.1:8000/module/{{workshop.this_module.order}}/">Return to module</a>
+    
+    <h2>Workshop</h2>
+    <p>
+      Title: {{ workshop.title }}<br/>
+      Description: {{ workshop.description }}<br/>
+      Lab: {{ workshop.this_lab }}<br/>
+      {% for instructor in workshop.this_instructors.all %}
+      Instructor: {{ instructor.name }}<br/>
+      <img src="{{ instructor.picture }}" /><br/>
+      {% endfor %}
+      <hr/>
+    </p>
+
+    <h2>Labs</h2>
+
+
+    <p>
+        <h3>{{ workshop.this_lab }}</h3>
+        Description: {{ lab.description }}<br/>
+        <hr/>
+    </p>
+
+
+</body>
+</html>
