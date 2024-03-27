@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -116,7 +116,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, images)
 STATIC_URL = 'static/'
+
+# Directory where Django will collect static files during production
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Additional directories where Django will look for static files during development
+STATICFILES_DIRS = [
+      # Example additional directory
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor',),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'animate.css'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'aos'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'bootstrap', 'css'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'bootstrap', 'js'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'boxicons', 'css'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'boxicons', 'fonts'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'counterup'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'icofont'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'icofont', 'fonts'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'isotope-layout'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'jquery'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'jquery-sticky'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'jquery.easing'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'php-email-form'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'venobox'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'waypoints'),
+]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

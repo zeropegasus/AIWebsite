@@ -16,7 +16,7 @@ def education(request):
         'mySubmissions': mySubmissions,
         'myAssignments': myAssignments
     }
-    return render(request, "main.html", context)
+    return render(request, "index.html", context)
 
 
 def program_detail_view(request, id):
