@@ -15,12 +15,15 @@
     {% comment %}
         Link to the program of current module by using the 'id' of the program to which this module belongs
     {% endcomment %}
-    <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}/">Return to program</a>
+    <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}">Return to program</a>
     
-    <h2>Module</h2>
+    <h2>{{ module.title }}<br/></h2>
     <p>
-      Title: {{ module.title }}<br/>
+      
       Description: {{ module.description }}<br/>
+
+      <br/>
+        <a href="http://127.0.0.1:8000/module/{{module.order}}/update_delete">Update or Delete</a>
       <hr/>
     </p>
 
@@ -32,11 +35,13 @@
         {% comment %}
             Link to the workshop, while also showing it's title
         {% endcomment %}
-        <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/"> {{ workshop.title }}</a></h3>
+        <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}"> {{ workshop.title }}</a></h3>
         Description: {{ workshop.description }}<br/>
         <hr/>
         {% endfor %}
     </p>
+
+    <p><a href="http://127.0.0.1:8000/workshop/create">Create new workshop</a></p>
 
 
 </body>

@@ -13,14 +13,16 @@
 
     <h1>Welcome to SecureAI!</h1>
 
-    <h2>Program</h2>
+    <h2>Program: {{ program.title }}</h2>
     <p>
         {% comment %}
             Access program's fields within database using the context dict
         {% endcomment %}
         
-        Title: {{ program.title }}<br/>
         Description: {{ program.description }}<br/>
+        
+        <br/>
+        <a href="http://127.0.0.1:8000/program/{{program.id}}/update_delete">Update or Delete</a>
         <hr/>
     </p>
 
@@ -37,11 +39,16 @@
         {% comment %}
             Link to the module, while also showing it's title
         {% endcomment %}
-        <h3><a href="http://127.0.0.1:8000/module/{{module.order}}/"> {{ module.title }}</a></h3>
+        <h3><a href="http://127.0.0.1:8000/module/{{module.order}}"> {{ module.title }}</a></h3>
         Description: {{ module.description }}<br/>
+        
         <hr/>
         {% endfor %}
     </p>
+
+    <hr>
+
+    <p><a href="http://127.0.0.1:8000/module/create">Create new module</a></p>
 
 
 </body>

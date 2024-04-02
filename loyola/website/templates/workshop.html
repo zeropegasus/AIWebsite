@@ -17,32 +17,42 @@
     {% comment %}
         Link to the module of current workshop by using the 'order' of the module to which this workshop belongs
     {% endcomment %}
-    <a href="http://127.0.0.1:8000/module/{{workshop.this_module.order}}/">Return to module</a>
+    <a href="http://127.0.0.1:8000/module/{{workshop.this_module.order}}">Return to module</a>
     
     {% comment %}
         Access workshop's fields within database using the context dict
     {% endcomment %}
 
-    <h2>Workshop</h2>
+    <h2>{{ workshop.title }}</h2>
     <p>
-      Title: {{ workshop.title }}<br/>
       Description: {{ workshop.description }}<br/>
       Lab: {{ workshop.this_lab }}<br/>
       {% for instructor in workshop.this_instructors.all %}
       Instructor: {{ instructor.name }}<br/>
       <img src="{{ instructor.picture }}" /><br/>
       {% endfor %}
+
+      <br/>
+      <a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/update_delete">Update or Delete</a>
+
       <hr/>
     </p>
 
     {% comment %}
         Lab is defined within context dict in workshop_detail_view
     {% endcomment %}
-    <h2>Labs</h2>
+    <h2>Lab</h2>
     <p>
-        <h3>{{ workshop.this_lab }}</h3>
-        Description: {{ lab.description }}<br/>
+        {% if lab %}
+            <h3>{{ lab.title }}</h3>
+            Description: {{ lab.description }}<br/>
+
+            <br/>
+            <a href="http://127.0.0.1:8000/lab/{{ lab.order }}/update_delete">Update or Delete</a>
+        {% endif %}
         <hr/>
+
+        <a href="http://127.0.0.1:8000/lab/create">Create new lab</a>
     </p>
 
 
