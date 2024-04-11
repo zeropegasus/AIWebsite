@@ -1,0 +1,24 @@
+<!-- module.html -->
+{% load css_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureAI</title>
+</head>
+
+    <!-- Include the css templates -->
+    {% include 'csstemplate.html' %}
+<body>
+    <h1>Creating a Program</h1>
+    <a href="http://127.0.0.1:8000/program/1">Return to program</a>
+    {% comment %} Display form {% endcomment %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+</body>
+</html>

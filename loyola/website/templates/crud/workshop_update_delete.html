@@ -1,0 +1,27 @@
+<!-- module.html -->
+{% load css_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureAI</title>
+</head>
+
+    <!-- Include the css templates -->
+    {% include 'csstemplate.html' %}
+<body>
+    <h1>Updating or Deleting a Workshop</h1>
+    <a href="http://127.0.0.1:8000/workshop/{{workshop.order}}">Return to Workshop</a>
+
+    {% comment %} Display form {% endcomment %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <input type="submit" name="update" value="Update">
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <input type="submit" name="delete" value="Delete">
+        </p>
+    </form>
+</body>
+</html>
