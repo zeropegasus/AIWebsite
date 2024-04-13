@@ -1,6 +1,8 @@
 from django import forms
 from .models import Program, Module, Workshop, Lab
 
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
 class ProgramsForm(forms.ModelForm):
     class Meta:
         model = Program
@@ -22,7 +24,8 @@ class ProgramsForm(forms.ModelForm):
         ]
     widgets = {
         "title": forms.TextInput(attrs={'class': 'p'}),
-        "description": forms.TextInput(attrs={'class': 'p'}),
+        # "description": forms.TextInput(attrs={'class': 'p'}),
+        "description": forms.CharField(widget=CKEditorUploadingWidget(attrs={'class': 'p'})),
         "start_date": forms.DateInput(attrs={'class': 'p'}),
         "end_date": forms.DateInput(attrs={'class': 'p'}),
         "created_at": forms.TimeInput(attrs={'type': 'time'}),

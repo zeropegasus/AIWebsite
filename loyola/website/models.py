@@ -13,9 +13,12 @@ from django.db import models
         Updated foreign keys for most models
 """
 
+from ckeditor_uploader.fields import RichTextUploadingField
+
 class Program(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True) 
-    description = models.TextField(null=True, blank=True)
+    # description = models.TextField(null=True, blank=True)
+    description = RichTextUploadingField(null=True)
     start_date = models.DateTimeField(null=True, blank=True)
     end_date = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(null=True, blank=True)
