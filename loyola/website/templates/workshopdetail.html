@@ -78,6 +78,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title">
                 <h3 class="into-sub-title">{{ workshop.title }}</h3>
+                <a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/update_delete">Update or Delete</a>
             </div>
             <div class="row">
 
@@ -143,7 +144,7 @@
 
                     <div class="portfolio_card">
                         <div class="card-title">
-                            <a href="http://127.0.0.1:8000/lab/{{ lab.order }}/update_delete">
+                            <a href="http://127.0.0.1:8000/lab/{{ lab.order }}">
                             <h4>{{ lab.title }}</h4>
                             </a>
                         </div>
@@ -154,7 +155,9 @@
                                 <br>
                             </p>
                         </div>
+                        
                     </div>
+                    <p><a href="http://127.0.0.1:8000/lab/create">Create new lab</a></p>
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -171,6 +174,7 @@
                                 <br>
                             </p>
                         </div>
+                        
                     </div>
                 </div>
 

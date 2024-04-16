@@ -4,21 +4,11 @@ from .models import Program, Module, Workshop, Lab, Assignment, Submission, Inst
 
 from .forms import ProgramsForm, ModulesForm, WorkshopsForm, LabsForm
 
-def education(request):
-    myPrograms = Program.objects.all().values()
-    myModules = Module.objects.all().values()
-    myLabs = Lab.objects.all().values()
-    mySubmissions = Submission.objects.all().values()
-    myAssignments = Assignment.objects.all().values()
-
-    context = {
-        'myPrograms': myPrograms,
-        'myModules': myModules,
-        'myLabs': myLabs,
-        'mySubmissions': mySubmissions,
-        'myAssignments': myAssignments
-    }
-    return render(request, "index.html", context)
+    # myPrograms = Program.objects.all().values()
+    # myModules = Module.objects.all().values()
+    # myLabs = Lab.objects.all().values()
+    # mySubmissions = Submission.objects.all().values()
+    # myAssignments = Assignment.objects.all().values()
 
 
 def program_detail_view(request, id):
@@ -85,7 +75,7 @@ def module_detail_view(request, order):
     }
 
     # Render module template, using context dict
-    return render(request, "module.html", context)
+    return render(request, "moduledetail.html", context)
 
 def module_create_view(request):
     context = {}
@@ -143,7 +133,7 @@ def workshop_detail_view(request, order):
     }
 
     # Render workshop template, using context dict
-    return render(request, "workshop.html", context)
+    return render(request, "workshopdetail.html", context)
 
 def workshop_create_view(request):
     context = {}
@@ -187,7 +177,28 @@ def workshop_update_delete_view(request, order):
 
     return render(request, "crud/workshop_update_delete.html", context)   
 
+def lab_list_view(request):
+    # Select lab based on its order
+    labs = Lab.objects.all().values()
+    # Template uses context to reference db entries
+    context = {
+        'labs': labs
+    }
 
+    # Render module template, using context dict
+    return render(request, "lablist.html", context)
+
+def lab_detail_view(request, order):
+    # Select program based on its id
+    lab = Lab.objects.get(order = order)
+    
+    # Template uses context to reference db entries
+    context = {
+        'lab': lab
+    }
+
+    # Render program template, using context dict
+    return render(request, "labdetail.html", context)
 
 def lab_create_view(request):
     context = {}

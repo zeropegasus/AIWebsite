@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of all labs</h1>
+    <a href="http://127.0.0.1:8000/program/1">Return to program</a>
+    {% for lab in labs|dictsort:"order" %}
+    <p>
+        {% comment %}
+            Link to the lab, while also showing its title
+        {% endcomment %}
+        <h3><a href="lab/{{ lab.order }}">{{ lab.title }}</a></h3>
+        Description: {{ lab.description }}<br/>
+        
+        <hr/>
+    </p>
+    {% endfor %}
+</body>
+</html>
