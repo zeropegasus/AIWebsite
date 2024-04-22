@@ -66,18 +66,12 @@
         Access workshop's fields within database using the context dict
     {% endcomment %}
     <p>
-        <!-- 
-      Description: {{ workshop.description }}<br/>
-      Lab: {{ workshop.this_lab }}<br/>
-      {% for instructor in workshop.this_instructors.all %}
-      Instructor: {{ instructor.name }}<br/>
-      {% endfor %} 
-      -->
 
     <section id="workshops" class="portfolio">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title">
                 <h3 class="into-sub-title">{{ workshop.title }}</h3>
+                <img src="{{ workshop.image|default:'/website/static/img/crest.jpg' }}"/>
                 <a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/update_delete">Update or Delete</a>
             </div>
             <div class="row">
@@ -111,9 +105,9 @@
               </div>
               <div class="col-lg-8 d-flex flex-column justify-content-center about-content">
                 <div class="icon-box">
-                    {% for instructor in workshop.this_instructors.all %}
+                    {% comment %} {% for instructor in workshop.this_instructors.all %} {% endcomment %}
                   <h4 class="title">Instructor: {{instructor.name}}</h4>
-                    {% endfor %}
+                    {% comment %} {% endfor %} {% endcomment %}
                   <p class="description">I am an assistant professor of Computer Science at <a href="https://www.luc.edu/" target="_blank">
                       <u>Loyola University Chicago</u>
                     </a>. I received a Ph.D. degree in Computer Science from the <a href="https://www.ucf.edu/" target="_blank">

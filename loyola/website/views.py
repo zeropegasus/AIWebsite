@@ -47,7 +47,7 @@ def program_update_delete_view(request, id):
     if request.method == "POST":
         # Check if the form was submitted for update
         if 'update' in request.POST:
-            form = ProgramsForm(request.POST, instance=obj)
+            form = ProgramsForm(request.POST or None, request.FILES or None, instance=obj)
             if form.is_valid():
                 form.save()
                 return HttpResponseRedirect("/program/1")
@@ -101,7 +101,7 @@ def module_update_delete_view(request, order):
     if request.method == "POST":
         # Check if the form was submitted for update
         if 'update' in request.POST:
-            form = ModulesForm(request.POST, instance=obj)
+            form = ModulesForm(request.POST or None, request.FILES or None, instance=obj)
             if form.is_valid():
                 form.save()
                 return HttpResponseRedirect("/program/1")
@@ -159,7 +159,7 @@ def workshop_update_delete_view(request, order):
     if request.method == "POST":
         # Check if the form was submitted for update
         if 'update' in request.POST:
-            form = WorkshopsForm(request.POST, instance=obj)
+            form = WorkshopsForm(request.POST or None, request.FILES or None, instance=obj)
             if form.is_valid():
                 form.save()
                 return HttpResponseRedirect("/program/1")
@@ -222,7 +222,7 @@ def lab_update_delete_view(request, order):
     if request.method == "POST":
         # Check if the form was submitted for update
         if 'update' in request.POST:
-            form = LabsForm(request.POST, instance=obj)
+            form = LabsForm(request.POST or None, request.FILES or None, instance=obj)
             if form.is_valid():
                 form.save()
                 return HttpResponseRedirect("/program/1")

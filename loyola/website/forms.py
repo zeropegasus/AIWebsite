@@ -101,7 +101,7 @@ class WorkshopsForm(forms.ModelForm):
         "notes": forms.TextInput(attrs={'class': 'p'}),
         "files": forms.TextInput(attrs={'class': 'p'}),  # Assuming file URL is text input
         "this_lab": forms.TextInput(attrs={'class': 'p'}),
-        "this_workshops": forms.TextInput(attrs={'class': 'p'}),
+        "this_instructors": forms.TextInput(attrs={'class': 'p'}),
         "this_program": forms.TextInput(attrs={'class': 'p'}),
     }
 
