@@ -1,18 +1,169 @@
+
+{% load static %}
+{% load css_tags %}
+<!-- module.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title style="text-align: center;">SecureAI</title>
+</head>
+
+    <!-- Include the css templates -->
+    {% include 'csstemplate.html' %}
 <body>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <title>SecureAI: Cybersecurity Training in AI</title>
+        <meta name="author" content="Mohammed Abuhamad">
+        <meta name="description" content="Assistant professor of Computer Science at Loyola University Chicago">
+        <link href="/static/assets/img/favicon.ico" rel="icon">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+              rel="stylesheet">
+        <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="/static/assets/css/style.css" rel="stylesheet">
 
-    <h1>Welcome to SecureAI!</h1>
-    <a href="http://127.0.0.1:8000/program/1">Return to program</a>
+<body>
+  <header id="header">
+    <h4 style="position: absolute; color:white; top:2%; font-size: 2em; left: 10% ">SecureAI</h4>
+    <div class="container">
+        <nav class="nav-menu float-right d-none d-lg-block">
+            
+            <ul>
+                
+                <li class="active">
+                    <a href="#header">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About Program</a>
+                </li>
+                <li>
+                    <a href="#workshops">Workshops</a>
+                </li>
+                <li>
+                    <a href="#FAQ">FAQ</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="https://forms.office.com/r/DFYHU5EgTM" target="_blank">Join Program</a>
+                </li>
 
-    <h2>Lab</h2>
-    <p>
-      Title: {{ lab.title }}<br/>
-      Description: {{ lab.description }}<br/>
-      <hr/>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}">Return to program</a> </br>
+    <a href="http://127.0.0.1:8000/workshop">Link to all workshops</a> </br>
+
+      <a href="http://127.0.0.1:8000/lab/{{lab.order}}/update_delete">Update or Delete</a>
+      
     </p>
+
+    
+  
+    <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+
+        <div class="portfolio_card"style="width:90%">
+            <div class="card-title">
+              <h2>Labs</h2>
+                
+              Title: {{ lab.title }}<br/>
+            </div>
+            <div class="card-body">
+                <p>
+                    <b style="color: #000000; font-weight: bold;">{{ lab.description }}
+                    <br>
+                    <br>
+                </p>
+            </div>
+            
+        </div>
+        <p><a href="http://127.0.0.1:8000/lab/create">Create new lab</a></p>
+    </div>
+  
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <div class="section-title">
+        <h3 class="into-sub-title">Materials</h3>
+      </div>
+      <div class="portfolio_card"
+      <div class="container">
+        <div class="accordion-1">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="publications-list">
+                <div class="card">
+
+                  <div class="card_header" id="heading_36">
+                    <button class="btn btn-link text-left collapsed" data-toggle="collapse" data-target="#collapse_36" aria-expanded="false" aria-controls="collapse_36">
+                      <span class="badge badge-success">Pervasive and Mobile Computing 2024</span>
+                      <a type="button" class="btn btn-outline-primary btn-xs disabled" target="_blank" href="">PDF</a>
+                       MotionID: Towards practical behavioral biometrics-based implicit user authentication on smartphones
+                    </button>
+                  </div>
+
+                  <div id="collapse_36" class="collapse" aria-labelledby="heading_36" data-parent="#publications" style="">
+                    <div class="card-body description">
+
+                      Traditional one-time authentication mechanisms cannot authenticate smartphone users’ identities throughout the session – the concept of using behavioral-based biometrics
+                      captured by the built-in motion sensors and touch data is a candidate to solve this issue. Many studies proposed solutions for behavioral-based continuous authentication;
+                      however, they are still far from practicality and generality for real-world usage. To date, no commercially deployed implicit user authentication scheme exists because most of
+                      those solutions were designed to improve detection accuracy without addressing real-world deployment requirements. To bridge this gap, we tackle the limitations of existing
+                      schemes and reach toward developing a more practical implicit authentication scheme, dubbed MotionID, based on a one-class detector using behavioral data from motion sensors
+                      when users touch their smartphones. Compared with previous studies, our work addresses the following challenges: 1) Global mobile average to dynamically adjust the sampling rate
+                      for sensors on any device and mitigate the impact of using sensors’ fixed sampling rate; 2) Over-all-apps to authenticate a user across all the mobile applications,
+                      not only on-specific application; 3) Single-device-evaluation to measure the performance with multiple users’ (i.e., genuine users and imposters) data collected from the
+                      same device; 4) Rapid authentication to quickly identify users’ identities using a few samples collected within short durations of touching (1–5 s) the device;
+                      5) Unconditional settings to collect sensor data from real-world smartphone usage rather than a laboratory study. To show the feasibility of MotionID for those challenges,
+                      we evaluated the performance of MotionID with ten users’ motion sensor data on five different smartphones under various settings.
+                      Our results show the impracticality of using a fixed sampling rate across devices that most previous studies have adopted. MotionID is able to authenticate users with an
+                      F1-score up to 98.5% for some devices under practical requirements and an F1-score up to roughly 90% when considering the drift concept and rapid authentication settings.
+                      Finally, we investigate time efficiency, power consumption, and memory usage considerations to examine the practicality of MotionID.
+
+
+                      <div align="right">
+                        <a type="button" class="btn btn-warning btn-xs disabled" target="_blank" href="#">Read more!</a>
+                        <a type="button" class="btn btn-warning btn-xs disabled" target="_blank" href="#">&nbsp;&nbsp; PDF &nbsp;&nbsp;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                
+
+
+
+
+
+
+
+  
+
+
+    <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="/static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+    <script src="/static/assets/js/main.js"></script>
 
 
 
 </body>
+
+
+
+
 </html>

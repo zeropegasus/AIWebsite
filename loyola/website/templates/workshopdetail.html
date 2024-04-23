@@ -29,10 +29,10 @@
 
 <body>
     <header id="header">
+        <h4 style="position: absolute; color:white; top:2%; font-size: 2em; left: 10% ">SecureAI</h4>
         <div class="container">
             <nav class="nav-menu float-right d-none d-lg-block">
                 <ul>
-                    <h4>SecureAI</h4>
                     <li class="active">
                         <a href="#header">Home</a>
                     </li>
@@ -57,6 +57,8 @@
         </div>
     </header>
 
+    
+
     {% comment %}
         Link to the module of current workshop by using the 'order' of the module to which this workshop belongs
     {% endcomment %}
@@ -66,72 +68,22 @@
         Access workshop's fields within database using the context dict
     {% endcomment %}
     <p>
+        <!-- 
+      Description: {{ workshop.description }}<br/>
+      Lab: {{ workshop.this_lab }}<br/>
+      {% for instructor in workshop.this_instructors.all %}
+      Instructor: {{ instructor.name }}<br/>
+      {% endfor %} 
+      -->
 
     <section id="workshops" class="portfolio">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title">
                 <h3 class="into-sub-title">{{ workshop.title }}</h3>
-                <img src="{{ workshop.image|default:'/website/static/img/crest.jpg' }}"/>
                 <a href="http://127.0.0.1:8000/workshop/{{workshop.order}}/update_delete">Update or Delete</a>
             </div>
-            <div class="row">
-
-    <main id="main">
-        <section id="about" class="about">
-          <div class="container">
-            <div class="row no-gutters">
-              <div class="col-lg-4">
-                <div id="profile">
-                  <div class="portrait" style="background-image:url(/static/img/abuhamad-1.jpg)"></div>
-                  <meta itemprop="image" content="/static/img/abuhamad-1.jpg">
-                  <ul class="social-icon" aria-hidden="true">
-                    <li>
-                      <a itemprop="sameAs" href="mailto:mabuhamad@luc.edu" target="_blank">
-                        <img src="/static/img/mail1.png" alt="" class="img-responsive" height="32px" width="32px">
-                      </a>
-                    </li>
-                    <li>
-                      <a itemprop="sameAs" href="https://scholar.google.com/citations?user=V7FWdNoAAAAJ&hl=en" target="_blank">
-                        <img src="/static/img/scholar.png" alt="" class="img-responsive" height="32px" width="32px">
-                      </a>
-                    </li>
-                    <li>
-                      <a itemprop="sameAs" href="https://www.linkedin.com/in/abuhamadm/" target="_blank">
-                        <img src="/static/img/linkedin.png" alt="" class="img-responsive" height="32px" width="32px">
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-8 d-flex flex-column justify-content-center about-content">
-                <div class="icon-box">
-                    {% comment %} {% for instructor in workshop.this_instructors.all %} {% endcomment %}
-                  <h4 class="title">Instructor: {{instructor.name}}</h4>
-                    {% comment %} {% endfor %} {% endcomment %}
-                  <p class="description">I am an assistant professor of Computer Science at <a href="https://www.luc.edu/" target="_blank">
-                      <u>Loyola University Chicago</u>
-                    </a>. I received a Ph.D. degree in Computer Science from the <a href="https://www.ucf.edu/" target="_blank">
-                      <u>University of Central Florida</u>
-                    </a>(UCF) in 2020. I also received a Ph.D. degree in Electrical and Computer Engineering from <a href="http://inha.ac.kr/" target="_blank">
-                      <u>INHA University</u>
-                    </a>, (Incheon, Republic of Korea) in 2020. I received a Master degree in Information Technology (Artificial Intelligence) from the <a href="https://www.ukm.my/" target="_blank">
-                      <u>National University of Malaysia</u>
-                    </a>, (Bangi, Malaysia) in 2013. </p>
-                  <p class="description">I am interested in AI/Deep-Learning-based Information Security, especially Software and Mobile/IoT Security. I am also interested in Machine Learning-based Applications and Adversarial Machine Learning. I have published several peer-reviewed research papers in top-tier conferences and journals such as ACM CCS, PoPETS, IEEE ICDCS, and IEEE IoT-J.</p>
-                  <p class="description">
-                    <strong>Research Lab:</strong>
-                    <u>Cybersecurity lab</u> and AI for Secure Computing Research Lab ( <u>AISeC</u>). <br>
-                    <strong>Teaching (Spring 2024):</strong>
-                    <u>COMP 487:</u> Deep Learning and <u>COMP 458:</u> Big Data Analytics. <br>
-                    <strong>Office Hours:</strong> Fridays 09:00 - 11:00 AM and Mondays 03:00 - 05:00 PM. <br>
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
         </section>
-
-
 
 
                 <div class="col-lg-6" data-aos="fade-up">
@@ -172,8 +124,6 @@
                     </div>
                 </div>
 
-
-    </section>
     
     <footer id="footer" class="footer bg-overlay">
         <div class="footer-main">

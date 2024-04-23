@@ -1,32 +1,160 @@
+{% load static %}
+{% load css_tags %}
+<!-- module.html -->
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title style="text-align: center;">SecureAI</title>
+</head>
 
-    <h1>Welcome to SecureAI!</h1>
+    <!-- Include the css templates -->
+    {% include 'csstemplate.html' %}
+<body>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <title>SecureAI: Cybersecurity Training in AI</title>
+        <meta name="author" content="Mohammed Abuhamad">
+        <meta name="description" content="Assistant professor of Computer Science at Loyola University Chicago">
+        <link href="/static/assets/img/favicon.ico" rel="icon">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+              rel="stylesheet">
+        <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="/static/assets/css/style.css" rel="stylesheet">
+
+<body>
+  <header id="header">
+    <h4 style="position: absolute; color:white; top:2%; font-size: 2em; left: 10% ">SecureAI</h4>
+    <div class="container">
+        <nav class="nav-menu float-right d-none d-lg-block">
+            
+            <ul>
+                
+                <li class="active">
+                    <a href="#header">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About Program</a>
+                </li>
+                <li>
+                    <a href="#workshops">Workshops</a>
+                </li>
+                <li>
+                    <a href="#FAQ">FAQ</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="https://forms.office.com/r/DFYHU5EgTM" target="_blank">Join Program</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
     <a href="http://127.0.0.1:8000/program/{{module.this_program.id}}">Return to program</a> </br>
     <a href="http://127.0.0.1:8000/workshop">Link to all workshops</a> </br>
 
-    <h2>Module {{ module.order }}</h2>
-    <img src="{{ module.image|default:'/website/static/img/crest.jpg' }}"/>
+    <h2>{{ module.title }}</h2>
     <p>
-      Title: {{ module.title }}<br/>
+      
       Description: {{ module.description }}<br/>
       <a href="http://127.0.0.1:8000/module/{{module.order}}/update_delete">Update or Delete</a>
-      <hr/>
+      
     </p>
-
-    <h2>Workshops</h2>
 
     {% for workshop in module.this_workshops.all %}
-
-    <p>
-        <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}"> {{ workshop.title }}</a></h3>
-        Description: {{ workshop.description }}<br/>
-        <hr/>
-        {% endfor %}
+    
+  
+    <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+        <h2 style="position: relative;left:33%">Workshops</h2>
+        <div class="portfolio_card"style="width:90%">
+            
+            <div class="card-title">
+                
+                <h3><a href="http://127.0.0.1:8000/workshop/{{workshop.order}}"> 
+                    <h4>{{ workshop.title }}</h4>
+                    </a>
+            </div>
+            <div class="card-body">
+                <p>
+                    <b style="color: #000000; font-weight: bold;">{{ workshop.description }}
+                    <br>
+                    <br>
+                </p>
+            </div>
+            
+        </div>
         <p><a href="http://127.0.0.1:8000/workshop/create">Create new workshop</a></p>
-    </p>
+    </div>
+
+
+    {% endfor %}
+ 
+    <footer id="footer" class="footer bg-overlay">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-md-6 footer-widget footer-about">
+                        <h3 class="widget-title">Loyola Center for Cybersecurity</h3>
+                        <p>Loyola University Chicago is designated by the NSA/DHS as a Center of Academic Excellence in Cyber Defence.
+                           The cybersecurity program offered by the university is recognized by the National Security Agency and the Department of Homeland Security.</p>
+                        <ul style="list-style-type:none;padding-left:0">
+                            <li>306
+                                Doyle Center, Lake Shore Campus</li>
+                            <li>1052 W Loyola Ave. Chicago, IL 60626</li>
+                        </ul>
+    
+                    </div>
+    
+                    <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 footer-widget">
+                        <h3 class="widget-title">Links</h3>
+                        <ul class="list-arrow">
+                            <li>
+                                <a href="https://www.luc.edu/" target="_blank">Loyola University Chicago</a>
+                            </li>
+                            <li>
+                                <a href="https://www.luc.edu/cs/index.shtml" target="_blank">Computer Science Department</a>
+                            </li>
+                            <li>
+                                <a href="https://newsroom.cs.luc.edu/" target="_blank">Computer Science Newsroom</a>
+                            </li>
+                            <li>
+                                <a href="https://www.luc.edu/cs/loyolacenterforcybersecurity/" target="_blank">Loyola Center
+                                                                                                               for
+                                                                                                               Cybersecurity</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="/static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+
 
 
 </body>
+
+
+
+
 </html>
