@@ -3,7 +3,7 @@ from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html')),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('program/<int:id>', views.program_detail_view, name='program_detail_view'),
     path('program/create', views.program_create_view, name='module_create_view'),
     path('program/<int:id>/update_delete', views.program_update_delete_view, name='program_update_delete_view'),

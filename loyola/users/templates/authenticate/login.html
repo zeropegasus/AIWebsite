@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% include 'csstemplate.html' %}
+{% block content %}
+    <h1>Login</h1>
+    <!-- <p> -->
+      <form action="" method="POST">
+          <!-- Security token by Django -->
+          {% csrf_token %}
+          <p>
+            <div class="formy">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+            <div class="formy">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+          <p>
+            <input type="submit" name="update" value="Submit">
+          </p>
+        </p>
+      </form>
+    
+    <!-- </p> -->
+
+{% endblock %}

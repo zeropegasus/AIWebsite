@@ -31,6 +31,16 @@
     <div class="container">
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
                 <li>
                     <a href="http://127.0.0.1:8000/program/1">---- Link to Program ----</a>
                 </li>

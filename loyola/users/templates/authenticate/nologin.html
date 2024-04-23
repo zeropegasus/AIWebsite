@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club
+{% endblock %}
+
+{% include 'csstemplate.html' %}
+{% block content %}
+  <h1>Welcome to My Tennis Club</h1>
+
+  <!-- <h3>Members</h3> -->
+  <h4>You aren't logged in!</h4>
+  <p class="centered"><a href="{% url 'login' %}">Login here to access this site.</a></p>
+  
+{% endblock %}

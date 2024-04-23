@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'users',
     'ckeditor',
     'ckeditor_uploader',
     'django.forms'
@@ -175,3 +176,5 @@ CKEDITOR_CONFIGS = {
 }
 
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+
+LOGIN_URL='http://127.0.0.1:8000/users/nologin'
