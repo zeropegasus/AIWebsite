@@ -14,7 +14,7 @@ class ProgramsForm(forms.ModelForm):
             "created_at",
             "updated_at",
             "duration",
-            "image",
+            # "image",
             "category",
             "is_published",
             "this_prerequisites",
@@ -31,7 +31,7 @@ class ProgramsForm(forms.ModelForm):
         "created_at": forms.TimeInput(attrs={'type': 'time'}),
         "updated_at": forms.TimeInput(attrs={'type': 'time'}),
         "duration": forms.NumberInput(attrs={'class': 'p'}),  # Integer input
-        "image": forms.TextInput(attrs={'class': 'p'}),  # Assuming image URL is text input
+        # "image": forms.TextInput(attrs={'class': 'p'}),  # Assuming image URL is text input
         "category": forms.TextInput(attrs={'class': 'p'}),
         "is_published": forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'p'})),  # Boolean input
         "this_prerequisites": forms.TextInput(attrs={'class': 'p'}),
@@ -47,7 +47,7 @@ class ModulesForm(forms.ModelForm):
             "title",
             "description",
             "duration",
-            "image",
+            # "image",
             "category",
             "is_published",
             "order",
@@ -79,7 +79,7 @@ class WorkshopsForm(forms.ModelForm):
             "title",
             "description",
             "duration",
-            "image",
+            # "image",
             "category",
             "is_published",
             "order",
@@ -94,7 +94,7 @@ class WorkshopsForm(forms.ModelForm):
         "title": forms.TextInput(attrs={'class': 'p'}),
         "description": forms.TextInput(attrs={'class': 'p'}),
         "duration": forms.NumberInput(attrs={'class': 'p'}),  # Integer input
-        "image": forms.TextInput(attrs={'class': 'p'}),  # Assuming image URL is text input
+       #  "image": forms.TextInput(attrs={'class': 'p'}),  # Assuming image URL is text input
         "category": forms.TextInput(attrs={'class': 'p'}),
         "is_published": forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'p'})),  # Boolean input
         "order": forms.NumberInput(attrs={'class': 'p'}),  # Integer input
