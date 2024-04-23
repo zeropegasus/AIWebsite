@@ -1,5 +1,5 @@
 from django import forms
-from .models import Program, Module, Workshop, Lab
+from .models import Program, Module, Workshop, Lab, Assignment, Instructor, Submission, Student
 
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
@@ -138,3 +138,49 @@ class LabsForm(forms.ModelForm):
         "this_instructors": forms.TextInput(attrs={'class': 'p'}),
         "this_assignment": forms.TextInput(attrs={'class': 'p'}),
     }
+
+class AssignmentsForm(forms.ModelForm):
+    class Meta:
+        model = Assignment
+        fields = '__all__'
+
+    widgets = {
+        "title": forms.TextInput(attrs={'class': 'p'}),
+        "description": forms.TextInput(attrs={'class': 'p'}),
+        "due_date": forms.DateInput(attrs={'class': 'p'}),
+        "instructions": forms.TextInput(attrs={'class': 'p'}),
+        "max_score": forms.NumberInput(attrs={'class': 'p'}),
+        "is_published": forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'p'})),
+        "files": forms.TextInput(attrs={'class': 'p'}),
+        "this_program": forms.TextInput(attrs={'class': 'p'}),
+        "this_submissions": forms.TextInput(attrs={'class': 'p'}),
+        "this_lab": forms.TextInput(attrs={'class': 'p'}),
+    }
+
+class SubmissionsForm(forms.ModelForm):
+    class Meta:
+        model = Submission
+        fields = '__all__'
+    
+    widgets = {
+        "submission_date": forms.DateInput(attrs={'class': 'p'}),
+        "files": forms.TextInput(attrs={'class': 'p'}),
+        "feedback": forms.TextInput(attrs={'class': 'p'}),
+        "score": forms.NumberInput(attrs={'class': 'p'}),
+        "this_student": forms.TextInput(attrs={'class': 'p'}),
+        "this_assignment": forms.TextInput(attrs={'class': 'p'}),
+    }
+
+class InstructorsForm(forms.ModelForm):
+    class Meta:
+        model = Instructor
+        fields = '__all__'
+
+    widgets = {
+        "name": forms.TextInput(attrs={'class': 'p'}),
+        "description": forms.TextInput(attrs={'class': 'p'}),
+        "picture": forms.TextInput(attrs={'class': 'p'}),
+        "this_workshops": forms.TextInput(attrs={'class': 'p'}),
+        "this_labs": forms.TextInput(attrs={'class': 'p'}),
+    }
+
