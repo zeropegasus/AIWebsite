@@ -151,6 +151,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'php-email-form'),
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'venobox'),
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'waypoints'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'img', 'speakers'),
 ]
 
 
