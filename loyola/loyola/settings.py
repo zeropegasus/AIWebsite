@@ -126,10 +126,12 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files (CSS, JavaScript, images)
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
 
 # Directory where Django will collect static files during production
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Additional directories where Django will look for static files during development
 STATICFILES_DIRS = [
@@ -151,7 +153,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'php-email-form'),
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'venobox'),
     os.path.join(BASE_DIR, 'static', 'assets', 'vendor', 'waypoints'),
-    os.path.join(BASE_DIR, 'static', 'assets', 'img', 'speakers'),
+    os.path.join(BASE_DIR, 'static', 'assets', 'img', 'instructor'),
 ]
 
 
