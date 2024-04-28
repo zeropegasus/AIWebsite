@@ -26,36 +26,50 @@
     <link href="static/assets/css/style.css" rel="stylesheet">
 
 <body>
-<header id="header">
-    <div class="container">
-        <nav class="nav-menu float-right d-none d-lg-block">
-            <ul>
-                <li class="active">
-                    <a href="#header">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About Program</a>
-                </li>
-                <li>
-                    <a href="#speakers">Speakers</a>
-                </li>
-                <li>
-                    <a href="#workshops">Workshops</a>
-                </li>
-                <li>
-                    <a href="#FAQ">FAQ</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-                <li>
-                    <a href="https://forms.office.com/r/DFYHU5EgTM" target="_blank">Join Program</a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header id="header">
+        <div class="container">
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:8000/program/1">---- Link to Program ----</a>
+                    </li>
+                    {% else %}
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                    
+                    <li class="active">
+                        <a href="#header">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About Program</a>
+                    </li>
+                    <li>
+                        <a href="#speakers">Speakers</a>
+                    </li>
+                    <li>
+                        <a href="#workshops">Workshops</a>
+                    </li>
+                    <li>
+                        <a href="#FAQ">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="https://forms.office.com/r/DFYHU5EgTM" target="_blank">Join Program</a>
+                    </li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
 <section id="hero">
     <div class="hero-container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
