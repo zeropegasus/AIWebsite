@@ -135,6 +135,18 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   max-height: 40px;
 }
 
+#header .left-logo {
+  font:white; 
+  font-size: 2em; 
+  font-style: strong;
+  margin: 0;
+  padding: 0;
+  top:2%;
+  left: 10% 
+  
+  
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -1647,6 +1659,15 @@ ul.ul-edu li .description p.institution {
   font-size: 20px;
   line-height: normal;
   margin: 10px 0;
+}
+
+.into-instructors {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: normal;
+  margin: 10px 0;
+  padding-left: 10%;
 }
 
 /*-- Featured Tab --*/

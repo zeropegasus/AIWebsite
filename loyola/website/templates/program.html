@@ -28,6 +28,7 @@
     
     <body>
         <header id="header">
+            <h4 style="position: absolute; color:white; top:2%; font-size: 2em; left: 1% "><b>SecureAI</b></h4>
             <div class="container">
                 <nav class="nav-menu float-right d-none d-lg-block">
                     <ul>
@@ -60,25 +61,39 @@
     p {text-align: center;}
     div {text-align: center;}
     </style>
-
-    <h1>Welcome to SecureAI!</h1>
     <a href="http://127.0.0.1:8000/lab">LAB LIST VIEW (ALL LABS)</a> <br/>
     <a href="http://127.0.0.1:8000/workshop">WORKSHOP LIST VIEW (ALL WORKSHOPS)</a> <br/><br/>
 
     <!--Program: -->
+    <!-- 
     <img src="../{{ program.image }}"/>
-    <h2>{{ program.title }}</h2>
+    -->
+
+    <div class="portfolio_card">
+        <div class="portrait">
+            <h3 class="into-instructors"><b>{{program.title}}</b></h3>
+          <p class="description"> 
+            <i>{{program.description|safe}}</i>
+          </p>
+          <a href="http://127.0.0.1:8000/program/{{program.id}}/update_delete">Update or Delete</a>
+        </div>
+      </div>
+
+      <!-- 
+    <h2> {{ program.title }}</h2>
     <p>
         {% comment %}
             Access program's fields within database using the context dict
         {% endcomment %}
-    <!--Descrption: -->    
+    Descrption:     
         {{ program.description|safe }}<br/>
         
         <br/>
         <a href="http://127.0.0.1:8000/program/{{program.id}}/update_delete">Update or Delete</a>
         <hr/>
     </p>
+    
+-->
 
     <h2>Modules</h2>
 
